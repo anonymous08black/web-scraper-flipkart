@@ -144,9 +144,10 @@ def scrap(list_of_url):
 scrap(all_url)
 
 data = pd.read_csv("all_items.csv")
+data = data.fillna(" ")
 data['title'] = data['title'] + " " + data["colour"].astype(str)
 data = data.drop(['Unnamed: 0', 'id', 'colour'], axis = 1)
-data = data.fillna(" ")
+
 
 
 # files.download("women_dresses.csv")
